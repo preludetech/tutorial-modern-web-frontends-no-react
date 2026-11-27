@@ -1,5 +1,6 @@
 <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-4"
-     id="todo-item-{{ item.id }}">
+     id="todo-item-{{ item.id }}"
+     x-data="{open:false}">
     <div class="flex items-center gap-1 mb-1">
         <input type="checkbox"
                {% if item.done %}checked{% endif %}
@@ -8,6 +9,27 @@
                hx-target="#todo-list"
                hx-swap="outerHTML">
         <p class="font-bold mb-0 {% if item.done %}line-through text-gray-400{% endif %}">{{ item.title }}</p>
-    </div>
-    <p class="mb-0 {% if item.done %}line-through text-gray-400{% else %} text-gray-600 {% endif %}">{{ item.description }}</p>
+        <button class="ml-auto border-0 bg-transparent text-primary hover:text-teal-800 cursor-pointer group"
+                x-on:click="open = ! open">
+            <svg class="w-4 h-4 group-hover:stroke-3"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="2"
+                 viewBox="0 0 24 24"
+                 x-show="!open">
+                <path d="M6 9l6 6 6-6" />
+            </svg>
+            <svg class="w-4 h-4 group-hover:stroke-3"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="2"
+                 viewBox="0 0 24 24"
+                 x-show="open">
+                <path d="M6 15l6-6 6 6" />
+            </svg>
+        </svg>
+    </button>
+</div>
+<p class="mb-0 {% if item.done %}line-through text-gray-400{% else %} text-gray-600 {% endif %}"
+   x-show="open">{{ item.description }}</p>
 </div>

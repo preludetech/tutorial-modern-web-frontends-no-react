@@ -14,7 +14,13 @@ uv sync
 uv run python manage.py migrate
 ```
 
-4. Run the server 
+4. Add some Todos to the database so we have something to look at
+
+```
+uv run python manage.py add_todos
+```
+
+5. Run the server 
 
 ```
 uv run python manage.py runserver

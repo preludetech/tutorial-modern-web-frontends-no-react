@@ -37,4 +37,4 @@ class Command(BaseCommand):
             description="How do we test this thing? Python is not enough!",
         )
 
-        self.stdout.write(self.style.SUCCESS("Added 4 todo items"))
+        self.stdout.write(self.style.SUCCESS("Added todo items"))

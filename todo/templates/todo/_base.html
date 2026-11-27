@@ -5,6 +5,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Todo</title>
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <style type="text/tailwindcss">
+            @theme {
+                --color-primary: teal;
+            }
+
+            @layer base {
+                body { @apply bg-gray-50 text-gray-800 max-w-2xl mx-auto p-6 leading-relaxed; }
+
+                h1 { @apply text-3xl font-bold mb-4 text-primary; }
+                h2 { @apply text-2xl font-semibold mb-3 text-primary; }
+                h3 { @apply text-xl font-semibold mb-2; }
+                p { @apply mb-4; }
+                a { @apply text-primary underline hover:opacity-80; }
+
+                ul { @apply list-disc pl-6 mb-4; }
+                ol { @apply list-decimal pl-6 mb-4; }
+
+                form { @apply flex flex-col gap-3 mb-4; }
+                label { @apply font-medium; }
+                input, textarea, select {
+                    @apply w-full border border-gray-300 rounded px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-primary;
+                }
+                input[type="checkbox"], input[type="radio"] { @apply w-auto; }
+                input[type="checkbox"] { @apply size-5 p-0 mr-2 align-middle accent-primary cursor-pointer; }
+
+                button {
+                    @apply bg-primary text-white px-4 py-2 rounded cursor-pointer hover:opacity-90 self-start;
+                }
+            }
+        </style>
     </head>
     <body>
         {% block body %}{% endblock %}

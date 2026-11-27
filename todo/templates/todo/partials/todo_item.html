@@ -1,6 +1,12 @@
-<div class="bg-white border border-gray-200 rounded-lg shadow-sm p-4">
+<div class="bg-white border border-gray-200 rounded-lg shadow-sm p-4"
+     id="todo-item-{{ item.id }}">
     <div class="flex items-center gap-1 mb-1">
-        <input type="checkbox" {% if item.done %}checked{% endif %} hx-trigger="click" hx-post="{% url 'toggle_todo_done' item.pk %}">
+        <input type="checkbox"
+               {% if item.done %}checked{% endif %}
+               hx-trigger="click"
+               hx-post="{% url 'toggle_todo_done' item.pk %}"
+               hx-target="#todo-item-{{ item.id }}"
+               hx-swap="outerHTML">
         <p class="font-bold mb-0 {% if item.done %}line-through text-gray-400{% endif %}">{{ item.title }}</p>
     </div>
     <p class="mb-0 {% if item.done %}line-through text-gray-400{% else %} text-gray-600 {% endif %}">{{ item.description }}</p>

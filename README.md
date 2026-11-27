@@ -25,3 +25,20 @@ uv run python manage.py add_todos
 ```
 uv run python manage.py runserver
 ```
+
+
+## Tutorial tags
+
+We are using git tags to move through the different versions of this tutorial. 
+
+To list available tags: 
+
+```
+git tag
+```
+
+To checkout a specific tag:
+
+```
+git checkout {tag_name}
+```

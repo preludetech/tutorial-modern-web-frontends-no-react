@@ -1,11 +1,7 @@
 {% extends "todo/_base.html" %}
 {% block body %}
     <h1>Get this done</h1>
-    <div class="space-y-3 flex-1 overflow-y-auto pr-2">
-        {% for item in todos %}
-            {% include "todo/partials/todo_item.html" %}
-        {% endfor %}
-    </div>
+    {% include "todo/partials/todo_list.html" %}
     <h2 class="pt-5">Add new item</h2>
     <form method="post">
         {% csrf_token %}

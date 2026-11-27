@@ -15,3 +15,6 @@ def home(request):
 
     todos = TodoItem.objects.all()
     return render(request, "todo/home.html", {"todos": todos, "form": form})
+
+
+# def toggle_done(request):

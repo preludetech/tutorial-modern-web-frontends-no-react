@@ -1,7 +1,7 @@
 {% extends "todo/_base.html" %}
 {% block body %}
     <h1>Get this done</h1>
-    <div class="space-y-3">
+    <div class="space-y-3 flex-1 overflow-y-auto pr-2">
         {% for todo in todos %}
             {% include "todo/partials/todo_item.html" %}
         {% endfor %}

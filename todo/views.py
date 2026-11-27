@@ -3,11 +3,14 @@ from django.shortcuts import redirect, render
 from .forms import TodoItemForm
 from .models import TodoItem
 
+import time
+
 
 def home(request):
     if request.method == "POST":
         form = TodoItemForm(request.POST)
         if form.is_valid():
+            time.sleep(2)
             form.save()
             return redirect("home")
     else:

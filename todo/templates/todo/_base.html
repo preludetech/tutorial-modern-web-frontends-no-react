@@ -16,6 +16,11 @@
             }
 
             @layer base {
+                * {
+                    scrollbar-width: thin;
+                    scrollbar-color: var(--color-primary) transparent;
+                }
+
                 body { @apply bg-gray-50 text-gray-800 max-w-2xl mx-auto p-6 leading-relaxed; }
 
                 h1 { @apply text-3xl font-bold mb-4 text-primary; }
@@ -41,7 +46,7 @@
             }
         </style>
     </head>
-    <body>
+    <body class="h-dvh flex flex-col">
         {% block body %}{% endblock %}
     </body>
 </html>

@@ -5,7 +5,7 @@
                {% if item.done %}checked{% endif %}
                hx-trigger="click"
                hx-post="{% url 'toggle_todo_done' item.pk %}"
-               hx-target="#todo-item-{{ item.id }}"
+               hx-target="#todo-list"
                hx-swap="outerHTML">
         <p class="font-bold mb-0 {% if item.done %}line-through text-gray-400{% endif %}">{{ item.title }}</p>
     </div>

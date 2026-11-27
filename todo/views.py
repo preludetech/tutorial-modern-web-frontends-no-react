@@ -22,9 +22,5 @@ def toggle_todo_done(request, pk):
     todo = get_object_or_404(TodoItem, pk=pk)
     todo.done = not todo.done
     todo.save()
-    return render(request, "todo/partials/todo_item.html", {"item": todo})
-
-
-def partial_todo_list(request):
     todos = TodoItem.objects.order_by("done", "id")
     return render(request, "todo/partials/todo_list.html", {"todos": todos})

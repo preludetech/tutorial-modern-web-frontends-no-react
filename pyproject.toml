@@ -7,6 +7,8 @@ requires-python = ">=3.13"
 dependencies = [
     "django>=6.1.3",
     "django-browser-reload>=1.21.0",
+    "pytest-env>=1.8.8",
+    "pytest-playwright>=0.10.0",
 ]
 
 [dependency-groups]
@@ -17,3 +19,10 @@ dev = [
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "config.settings"
+filterwarnings = [
+    "ignore::pytest.PytestRemovedIn10Warning",
+]
+
+[tool.pytest_env]
+# Playwright runs an event loop, which makes Django think we're in async code.
+DJANGO_ALLOW_ASYNC_UNSAFE=  "true"

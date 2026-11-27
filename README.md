@@ -8,36 +8,38 @@
 uv sync
 ```
 
-3. Run database migrations
+3. Install playwright
+
+```
+playwright install
+```
+
+There is a chance that it will say your system is missing dependencies, but it will tell you how to install them.
+
+
+Check that it was installed properly by running 
+
+```
+uv run pytest
+```
+
+
+
+4. Run database migrations
 
 ```
 uv run python manage.py migrate
 ```
 
-4. Add some Todos to the database so we have something to look at
+5. Add some Todos to the database so we have something to look at
 
 ```
 uv run python manage.py add_todos
 ```
 
-5. Run the server 
+6. Run the server 
 
 ```
 uv run python manage.py runserver
 ```
 
-## Tutorial tags
-
-We are using git tags to move through the different versions of this tutorial. 
-
-To list available tags: 
-
-```
-git tag
-```
-
-To checkout a specific tag:
-
-```
-git checkout {tag_name}
-```

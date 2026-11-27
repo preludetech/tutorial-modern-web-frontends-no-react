@@ -9,7 +9,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         TodoItem.objects.create(
             title="Say hello",
-            description="Introduce everyone to the fantastic possabilities of HTMX",
+            description="Introduce everyone to the fantastic possibilities of HTMX",
             done=True,
         )
         TodoItem.objects.create(
@@ -27,6 +27,10 @@ class Command(BaseCommand):
         TodoItem.objects.create(
             title="Re-ordering the list when we check boxes",
             description="Let's put `done` items at the bottom of the list",
+        )
+        TodoItem.objects.create(
+            title="Simple frontend state management",
+            description="Show and hide item descriptions",
         )
         TodoItem.objects.create(
             title="Learn Playwright",

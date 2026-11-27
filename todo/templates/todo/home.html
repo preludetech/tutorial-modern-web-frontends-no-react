@@ -3,13 +3,7 @@
     <h1>Get this done</h1>
     <div class="space-y-3">
         {% for todo in todos %}
-            <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-4">
-                <p class="font-bold mb-1">
-                    <input type="checkbox" {% if todo.done %}checked{% endif %}>
-                    {{ todo.title }}
-                </p>
-                <p class="mb-0 text-gray-600">{{ todo.description }}</p>
-            </div>
+            {% include "todo/partials/todo_item.html" %}
         {% endfor %}
     </div>
     <h2 class="pt-5">Add new item</h2>

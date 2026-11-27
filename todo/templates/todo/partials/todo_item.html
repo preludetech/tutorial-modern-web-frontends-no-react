@@ -1,0 +1,7 @@
+<div class="bg-white border border-gray-200 rounded-lg shadow-sm p-4">
+    <p class="font-bold mb-1">
+        <input type="checkbox" {% if todo.done %}checked{% endif %}>
+        {{ todo.title }}
+    </p>
+    <p class="mb-0 text-gray-600">{{ todo.description }}</p>
+</div>

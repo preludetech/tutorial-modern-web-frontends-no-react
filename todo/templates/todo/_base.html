@@ -46,7 +46,8 @@
             }
         </style>
     </head>
-    <body class="h-dvh flex flex-col">
+    <body class="h-dvh flex flex-col"
+          hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
         {% block body %}{% endblock %}
     </body>
 </html>

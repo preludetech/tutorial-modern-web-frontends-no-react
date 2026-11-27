@@ -1,4 +1,5 @@
-from django.shortcuts import redirect, render
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, redirect, render
 
 from .forms import TodoItemForm
 from .models import TodoItem
@@ -15,3 +16,10 @@ def home(request):
 
     todos = TodoItem.objects.all()
     return render(request, "todo/home.html", {"todos": todos, "form": form})
+
+
+def toggle_todo_done(request, pk):
+    todo = get_object_or_404(TodoItem, pk=pk)
+    todo.done = not todo.done
+    todo.save()
+    return HttpResponse()

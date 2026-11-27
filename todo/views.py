@@ -14,7 +14,7 @@ def home(request):
     else:
         form = TodoItemForm()
 
-    todos = TodoItem.objects.all()
+    todos = TodoItem.objects.order_by("done", "id")
     return render(request, "todo/home.html", {"todos": todos, "form": form})
 
 
